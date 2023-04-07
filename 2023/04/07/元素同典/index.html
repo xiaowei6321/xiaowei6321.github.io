@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="元素同典从零开始的魔法书——Novel AI入门导论 前言​        这是一篇指南，旨在为刚刚接触 Novel AI 的萌新快速上手 AI 作画。 ​        本文基于无数高阶魔法师的经验与对 WEB-UI 代码进行挖掘所得成果总结而成，且包含许多个人理解和主观观点。非常欢迎各位前往元素法典交流群讨论。 准备工作：神奇 NAI 在哪里？ Novel AI(简称 NAI)是一个线上的深度">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2023/04/07/%E5%85%83%E7%B4%A0%E5%90%8C%E5%85%B8/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="元素同典从零开始的魔法书——Novel AI入门导论 前言​        这是一篇指南，旨在为刚刚接触 Novel AI 的萌新快速上手 AI 作画。 ​        本文基于无数高阶魔法师的经验与对 WEB-UI 代码进行挖掘所得成果总结而成，且包含许多个人理解和主观观点。非常欢迎各位前往元素法典交流群讨论。 准备工作：神奇 NAI 在哪里？ Novel AI(简称 NAI)是一个线上的深度">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i0.hdslb.com/bfs/article/4adb9255ada5b97061e610b682b8636764fe50ed.png@progressive.webp">
+<meta property="og:image" content="https://i0.hdslb.com/bfs/article/4adb9255ada5b97061e610b682b8636764fe50ed.png@progressive.webp">
+<meta property="og:image" content="https://i0.hdslb.com/bfs/article/0bb146ca4f4d4faf9ae11631eed4befaabdad338.png@942w_273h_progressive.webp">
+<meta property="og:image" content="https://i0.hdslb.com/bfs/article/4adb9255ada5b97061e610b682b8636764fe50ed.png@progressive.webp">
+<meta property="og:image" content="https://i0.hdslb.com/bfs/article/4adb9255ada5b97061e610b682b8636764fe50ed.png@progressive.webp">
+<meta property="og:image" content="https://i0.hdslb.com/bfs/article/75cd57d3e15466f2298f3b7b6d16ed9050718b91.png@942w_447h_progressive.webp">
+<meta property="og:image" content="https://i0.hdslb.com/bfs/article/f4ded71735216db4b318abd2eff76f0ffbd8071c.png@942w_455h_progressive.webp">
+<meta property="og:image" content="https://i0.hdslb.com/bfs/article/7a0b941fc27bc323568cb8b4950d45432ef30cfa.png@942w_443h_progressive.webp">
+<meta property="og:image" content="https://i0.hdslb.com/bfs/article/4adb9255ada5b97061e610b682b8636764fe50ed.png@progressive.webp">
+<meta property="og:image" content="https://i0.hdslb.com/bfs/article/e786b808d32e992e006ab2c35268b33dc9cfab2a.png@942w_942h_progressive.webp">
+<meta property="og:image" content="https://i0.hdslb.com/bfs/article/d709a84f85f07ded362a810cb311ddf34e029036.png@942w_942h_progressive.webp">
+<meta property="og:image" content="https://i0.hdslb.com/bfs/article/4adb9255ada5b97061e610b682b8636764fe50ed.png@progressive.webp">
+<meta property="og:image" content="https://i0.hdslb.com/bfs/article/4adb9255ada5b97061e610b682b8636764fe50ed.png@progressive.webp">
+<meta property="og:image" content="https://i0.hdslb.com/bfs/article/1e316a7358b8e149cd1d5e786e88127529f4f286.png@942w_308h_progressive.webp">
+<meta property="og:image" content="https://i0.hdslb.com/bfs/article/d4a43d99de59dc5e285fdb17aed22f88f2623104.png@647w_173h_progressive.webp">
+<meta property="og:image" content="https://i0.hdslb.com/bfs/article/b0a2d5f5c91450d57ca6df443874ad901a46a45e.png@942w_575h_progressive.webp">
+<meta property="og:image" content="https://i0.hdslb.com/bfs/article/8c231dcd6fa480f076dc103878d32e0852a09033.png@942w_297h_progressive.webp">
+<meta property="og:image" content="https://i0.hdslb.com/bfs/article/4adb9255ada5b97061e610b682b8636764fe50ed.png@progressive.webp">
+<meta property="og:image" content="https://i0.hdslb.com/bfs/article/993edd112de15dac8f6ff9c639408f3bc639c8d5.png@942w_188h_progressive.webp">
+<meta property="og:image" content="https://i0.hdslb.com/bfs/article/27dab041e515bf91b695246d11ff42e423100311.png@942w_399h_progressive.webp">
+<meta property="og:image" content="https://i0.hdslb.com/bfs/article/4adb9255ada5b97061e610b682b8636764fe50ed.png@progressive.webp">
+<meta property="og:image" content="https://i0.hdslb.com/bfs/article/769baac92b77c88e1bb04a4fd024c9b88d35c098.png@942w_471h_progressive.webp">
+<meta property="og:image" content="https://i0.hdslb.com/bfs/article/4fbb80dc279e89f6585648f069549fb291011ef5.png@942w_471h_progressive.webp">
+<meta property="og:image" content="https://i0.hdslb.com/bfs/article/a811ec9214d190d17c6c4b441980a20e7fccaf36.png@942w_471h_progressive.webp">
+<meta property="og:image" content="https://i0.hdslb.com/bfs/article/4adb9255ada5b97061e610b682b8636764fe50ed.png@progressive.webp">
+<meta property="og:image" content="https://i0.hdslb.com/bfs/article/4adb9255ada5b97061e610b682b8636764fe50ed.png@progressive.webp">
+<meta property="og:image" content="https://i0.hdslb.com/bfs/article/e6914312e91f0cc020a2d7605b53897c1be53159.png@942w_471h_progressive.webp">
+<meta property="og:image" content="https://i0.hdslb.com/bfs/article/4adb9255ada5b97061e610b682b8636764fe50ed.png@progressive.webp">
+<meta property="og:image" content="https://i0.hdslb.com/bfs/article/4adb9255ada5b97061e610b682b8636764fe50ed.png@progressive.webp">
+<meta property="og:image" content="https://i0.hdslb.com/bfs/article/4adb9255ada5b97061e610b682b8636764fe50ed.png@progressive.webp">
+<meta property="og:image" content="https://i0.hdslb.com/bfs/article/4adb9255ada5b97061e610b682b8636764fe50ed.png@progressive.webp">
+<meta property="og:image" content="https://i0.hdslb.com/bfs/article/4adb9255ada5b97061e610b682b8636764fe50ed.png@progressive.webp">
+<meta property="og:image" content="https://i0.hdslb.com/bfs/article/4adb9255ada5b97061e610b682b8636764fe50ed.png@progressive.webp">
+<meta property="article:published_time" content="2023-04-07T01:50:18.569Z">
+<meta property="article:modified_time" content="2023-03-20T05:51:52.251Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i0.hdslb.com/bfs/article/4adb9255ada5b97061e610b682b8636764fe50ed.png@progressive.webp">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-元素同典" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/04/07/%E5%85%83%E7%B4%A0%E5%90%8C%E5%85%B8/" class="article-date">
+  <time class="dt-published" datetime="2023-04-07T01:50:18.569Z" itemprop="datePublished">2023-04-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="元素同典"><a href="#元素同典" class="headerlink" title="元素同典"></a>元素同典</h1><p>从零开始的魔法书——Novel AI入门导论</p>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>​        这是一篇指南，旨在为刚刚接触 Novel AI 的萌新快速上手 AI 作画。</p>
+<p>​        本文基于无数高阶魔法师的经验与对 WEB-UI 代码进行挖掘所得成果总结而成，且包含许多个人理解和主观观点。非常欢迎各位前往元素法典交流群讨论。</p>
+<p><strong>准备工作：神奇 NAI 在哪里？</strong></p>
+<p><strong>Novel AI(简称 NAI)是一个线上的深度学习小说续写平台，而 NAI Diffusion 是 NAI 在 2022 年 10 月 3 日推出的基于 Stable Diffusion 算法的自动生成二次元图片的服务。</strong></p>
+<h1 id="添加模型"><a href="#添加模型" class="headerlink" title="添加模型"></a>添加模型</h1><p>​        在安装完毕后，将下载的模型（以 ckpt 为后缀名的一个文件）置于 WEB-UI 根目录下方的 models 文件夹中的 Stable-diffusion 文件夹中。</p>
+<p>​        可选：更改你的模型 model 文件名以添加更多模型。</p>
+<p>​        可选：将 VAE 文件(文件名出现了形如 vae.pt 的部分)置于模型文件旁边，同一个文件夹内，并按照如下的正确格式更改 VAE 文件名。</p>
+<p>例：若模型文件名为 model.ckpt，则改为 model.vae.pt</p>
+<h1 id=""><a href="#" class="headerlink" title=""></a></h1><h1 id="离线版如何达到官方版本的效果"><a href="#离线版如何达到官方版本的效果" class="headerlink" title="离线版如何达到官方版本的效果"></a>离线版如何达到官方版本的效果</h1><p>​        通常来讲，NAIFU 并不需要额外设定以达到官网质量，而 WEB-UI 则需要额外设定。如果缺少选项请检查 WEB-UI 是否为最新版。<strong>此为 WEB-UI 的设定：</strong></p>
+<p><strong>✧ 确保正确安装 VAE 文件与 PT 文件。</strong></p>
+<p>➢ VAE 文件位于 <strong>model</strong> 文件夹中，需要与模型文件<strong>（名字）.ckpt</strong> 改为同名并置于同一文件目录下方。</p>
+<p>➢ PT 文件位于 <strong>modules</strong> 文件夹中，需要置于 <strong>model</strong> 文件夹中的 <strong>hypernetworks</strong> 文件夹内。</p>
+<p><strong>✧ 以下在网页的 settings 中：</strong></p>
+<p>➢ 将选单 <strong>Stable Diffusion</strong> 下方的 <strong>Stop At last layers of CLIP model</strong> 改为 <strong>2</strong></p>
+<p>➢ 将选单 <strong>Sampler parameters</strong> 下方的 <strong>eta(noise multiplier) for ancestral samplers</strong> 改为 <strong>0.68</strong></p>
+<p>➢ 选单 <strong>Sampler parameters</strong>下方的 <strong>Eta noise seed delta</strong> 设为 <strong>31337</strong></p>
+<p>➢ 完成这些设定后，点击页面最上方的 <strong>Apply settings</strong> 保存。</p>
+<p><img src="https://i0.hdslb.com/bfs/article/4adb9255ada5b97061e610b682b8636764fe50ed.png@progressive.webp" alt="img"></p>
+<h1 id="-1"><a href="#-1" class="headerlink" title=""></a></h1><p>在深度学习中，我们使用一种称为”prompt”的方式来指导人工智能生成图像。prompt通常由一些以逗号分隔的单词、词组和短语组成，这些关键词被用来筛选和融合图像。prompt中的关键词对AI的生成过程起着关键的作用，可以通过调整关键词的顺序、使用括号和数字等方法来改变关键词的重要程度。prompt中还可以包含负面关键词，AI会尽量避免使用这些关键词来生成图像。在生成图像时，prompt就像是一个咒语，它直接决定了最终生成的图像。因此，选择合适的关键词和调整它们的顺序和权重非常重要。</p>
+<p>AI对关键词的辨识顺序是从前到后，以逗号为分隔。关键词的重要程度可以用小括号和中括号调整，小括号增加为1.1倍权重，中括号减弱为0.91倍权重。括号可以多次嵌套，效果相乘。大括号在WEB-UI中没有用，官方网站上会增加1.05倍权重。可以在关键词后加上“:数字”来直接调整权重，例如(word:1.1)等同于(word)。需要注意的是，{}是NovelAI官方服务专用，仅增加1.05倍权重，使用泄露模型时不应使用此语法。更详细的信息和额外功能请参阅<a target="_blank" rel="noopener" href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features%E3%80%82">https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Features。</a></p>
+<p>在进行参数调整之前，需要先选择采样方法。不同的采样方法会影响AI生成图像的方式和速度。内置的采样方法包括 Euler A 和 Euler、LDM、DPM2 A &#x2F; DDIM等。通常来说，Euler A是速度和质量兼顾的最优选择，而DPM2 A可以在核理分配步数的情况下产生高质量的作品。DDIM和Euler则在运气较好的情况下以细腻的画风见长。如果审美疲劳了，可以尝试更换采样方法来获得新的风格。不过，不推荐使用LMS、DPM fast、LMS Karras和PLMS等采样方法，它们的生成质量通常不如其他算法。</p>
+<p>迭代次数并不总是越多越好，不同的采样方法和模型对迭代次数有不同的要求。非线性迭代方法如DPM A和Euler A在一定程度的迭代次数之后，质量反而会快速下滑，而线性迭代方法如DDIM和Euler则通常需要更多的迭代次数来获得更高质量的图像。在实际使用中，需要综合考虑画布大小、目标复杂度等因素来确定迭代次数。一般来说，在512*512大小的画布和简单场景下，使用Euler A的迭代次数推荐为30到40次，使用DDIM的迭代次数推荐为25到35次。然而，最新的研究表明，更高的迭代次数可能会对生成图像产生巨大的帮助。对于更大的画布、更复杂的场景或更特殊的需求，请参考后续文献。</p>
+<p>​        <strong>在最理想的情况下，一位赛博魔法师首先应当试着去理解</strong> <strong>danbooru.donmai.us</strong>，这是 NAI 的重要训练来源，也是绝大多数关键词的出处(至少覆盖 80%+)，所以在里面找到的引用数大于 2000 的 tag 直接当作 prompt 使用往往都能出效果，你甚至还能发现诸如颜文字当做 prompt 的惊人用法——而这都是可行的。但 danbooru 的访问需要跨域屏障，较为不便。</p>
+<p>​        而除此之外还应该自己去收集可以用做 prompt 的材料，但是一个人上路太孤独了，拿着这把全村最好的法杖吧！</p>
+<p><strong>NAI信息并联计划：<a target="_blank" rel="noopener" href="https://kdocs.cn/l/cre0TwbMkdx3">https://kdocs.cn/l/cre0TwbMkdx3</a></strong></p>
+<p>​        去寻找各种各样的帖子或者指南。抽丝剥茧地借鉴前人经验，批判思考地获取其中的精华(前人可能会因错误习惯而被干扰)，也能得到不少效果很棒的 prompt。</p>
+<p>​        <strong>但真正的高阶魔法师将直接应用现实生活的知识。</strong>能注意到各类 tag 的自然语言逻辑都是以现实生活中存在的单词，这是为了节省自然语言处理方面的开销并符合日常使用习惯。因此，<strong>一个英语水准较好、能运用各类生动表达、甚至理解一些场景专业术语与服装术语的魔法师可以直接应用合规的英文单词进行大段叙述描写</strong>，结果往往都将令人满意。</p>
+<p>​        一位合格的赛博法师应该拥有自己的魔导书。将上述各种各样方式收集到的 prompt 与技巧整理、记录到文档或随便什么顺手的地方，都将很有帮助。</p>
+<p>​        但也许真正的魔导书…并不是以赛博魔法师们想象中的那种形式存在也说不定？</p>
+<p><img src="https://i0.hdslb.com/bfs/article/4adb9255ada5b97061e610b682b8636764fe50ed.png@progressive.webp" alt="img"></p>
+<h1 id="-2"><a href="#-2" class="headerlink" title=""></a></h1><h1 id="闭目凝神，咏唱咒语"><a href="#闭目凝神，咏唱咒语" class="headerlink" title="闭目凝神，咏唱咒语"></a>闭目凝神，咏唱咒语</h1><p>​        总而言之，你查阅资料或突发奇想，得到了一些咒语。将它填入第一栏，然后再在第二栏填入随处可见的通用反咒(Negative Prompt)，点击 Generate，你的第一段咒语就完成了(笔者在此演示最简单的 <strong>冲 国</strong> <strong>特 攻</strong> 召唤术)：</p>
+<p><img src="https://i0.hdslb.com/bfs/article/0bb146ca4f4d4faf9ae11631eed4befaabdad338.png@942w_273h_progressive.webp" alt="img">masterpiece, 1 girl, cute face, white hair, red eyes</p>
+<p><strong>masterpiece, 1 girl, cute face, white hair, red eyes</strong></p>
+<p>​        以防有人没查到——<strong>通用反咒</strong>是：</p>
+<p>lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, fewer digits, cropped, worst quality, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, bad feet</p>
+<p>​        如果充分理解了前文内容，并且咏唱地不那么夸张，那么第一次施法往往将无惊无险地获得成功。<strong>现在你已经脱离麻瓜范畴，拥有成为魔法学徒的潜质了，向着魔法的大门前进吧！</strong></p>
+<p><img src="https://i0.hdslb.com/bfs/article/4adb9255ada5b97061e610b682b8636764fe50ed.png@progressive.webp" alt="img"></p>
+<h1 id="-3"><a href="#-3" class="headerlink" title=""></a></h1><h1 id="咒法二次不完备进阶"><a href="#咒法二次不完备进阶" class="headerlink" title="咒法二次不完备进阶"></a>咒法二次不完备进阶</h1><p>Once we accept our limits, we go beyond them.</p>
+<p>我们至今为止的所有努力，并非全部木大。</p>
+<h1 id="权与重"><a href="#权与重" class="headerlink" title="权与重"></a>权与重</h1><p>​        上文提到了关于 <strong>()、[]</strong> 的使用。以防刚把魔杖捂热的新魔法师看到这里已经忘了它们是什么意思 —— 一对小括号意味着把括起来的 prompt 权重 * 1.1，中括号则是 &#x2F; 1.1，<strong>大括号在 WEB-UI 中无调整权重作用，且会被作为文本而解析。</strong></p>
+<p>​        如果因为某些需求而要大量抬升权重，可以对 prompt 进行多次括号，比如((((prompt))))，这意味着将它的权重 * 1.1 四次，也就是 1.4641。但这个写法太吓人了，数括号也很浪费时间，所以<strong>应该直接为一个 prompt 赋予权重：</strong></p>
+<p><strong>(prompt:权重乘数)</strong></p>
+<p>​        外层一定是小括号而非其它括号。比如 (red hair:1.5) 将直接给 red hair 赋予 * 1.5 权重，清晰简洁，便于自己回顾和他人理解，强烈推荐。</p>
+<p>但务必请不要做出诸如 ((red hair:1.5)) 的奇怪写法。虽然在大多数情况下，它们的确会产生互相叠乘的正常效果，但在某些离谱的情况下则会导致<strong>权重无效</strong>。</p>
+<p>​        而除了整词权重之外，也可以进行<strong>部分权重</strong>，比如如下例子：</p>
+<p><strong>1 girl, white long (messy:1.2) hair, red eyes</strong></p>
+<p>​        将专门对 messy 部分赋予 * 1.2 权重，其它部分不受影响。</p>
+<p>​        高权重的元素会在画面中有着更大的占比或更强烈的存在感或更多的数量，是能可观地影响构图的原因之一。笔者<strong>非常不建议</strong>给出十分离谱的权重值，三个小括号也只有 1.3 左右，而一般来说 1.6 就已经很极端地占据画面了，再高至例如 2.0 只会在<strong>大多数情况</strong>下让咒语变成<strong>召 唤 古 神</strong>。</p>
+<h1 id="高级咒术解析"><a href="#高级咒术解析" class="headerlink" title="高级咒术解析"></a>高级咒术解析</h1><p>​        上述的小括号、中括号与带权重小括号都属于低阶语法，比如(((prompt)))。而接下来要介绍的是更长更复杂一些的<strong>高阶语法</strong>。</p>
+<p>​        <strong>高阶语法</strong>都以 <strong>[]</strong> 作为外层包括，包括<strong>分步描绘、融合描绘</strong>两种，使用高阶语法时这一对中括号不会让权重降低。高阶语法内<strong>可以嵌套</strong>低阶语法，低阶语法内也可以嵌套高阶语法——但为了交流方便不建议嵌套，高阶语法之间能否互相嵌套因具体情况不同而异，下文会做出介绍。</p>
+<p>​        <strong>下****列介绍全部基于编纂本篇时推出的最新版 WEB-UI，对于 NAIFU 或较旧版 WEB-UI 可能不适用。</strong></p>
+<p>首先介绍<strong>分步描绘</strong>的三种形式：</p>
+<p><strong>[from:to:step]</strong></p>
+<p><strong>[to:step] (不建议)</strong></p>
+<p><strong>[from::step] (不建议)</strong></p>
+<p>​        它的作用是让 prompt 在达到 step 之前被视为 from，在达到后视为 to。若是在对应位置没有 from 或者没有 to 则视为<strong>空</strong>。step 为大于 1 的整数时表示<strong>步数</strong>，为小于 1 的正小数时表示<strong>总步数的百分比</strong>。</p>
+<p>​        比如 a girl with [green hair:red hair flower:0.2] 会在前 20% 步数被视为 a girl with green hair，在后 80% 步数被视为 a girl with red hair flower。需要注意这两个描述之间的兼容性和覆盖——在步数合适的情况下，最后形成的人物会拥有绿色头发和红色花饰，但也可能因为颜色溢出导致头发也变为红色，毕竟后 80% 没有绿色头发的限定，AI 完全可以自己理解一个随机的发色。</p>
+<p>​        在最新版中，分步描绘可以嵌套，形如 [from:[to:end:step2]:step1] 的语句是可以被正确识别的。且分步描绘现在支持逗号分割，形如 [1 girl, red hair: 2 girls, white hair:0.3] 的语句也可以被正确识别。</p>
+<p>​        分步描绘不特别擅长细化细节，与其分步描绘不如将细化部分直接写入持续生肖的部分。<strong>分步描绘更擅长在画面初期建立引导，大幅影响后续构图或画面生成</strong>。</p>
+<p>​        需要注意的是，<strong>分步描绘具有视觉延后性</strong>——当要求 AI 在比如第 20 步开始描绘另一个不同的物体时，可能在比如第 24 步(或更晚)才能从人眼视觉上感知到另一个物体勉强出现在画面中。这是因为 AI 看待图片的方式和人眼看待图片的方式不同，<strong>在 AI 的认知里图片已经初具新物体的特性的时候，人眼可能依然看不出来</strong>。</p>
+<p><strong>然后介绍融合描绘的两种形式：</strong></p>
+<p><strong>[A | B]</strong></p>
+<p><strong>[A:w1 | B:w2]</strong></p>
+<p><strong>它们还有各自对应的可无限延长版：</strong></p>
+<p><strong>[A | B | C | …]</strong></p>
+<p><strong>[A:w1 | B:w2 | C:w3 | …]</strong></p>
+<p>​        对于形如 [A | B] 的第一种，AI 将在第一步画 A、第二步画 B、第三步画 A…交替进行。而对于无限延长版，则变为第一步画 A、第二步画 B、第三步画 C…循环往复交替进行。</p>
+<p>​        对于形如 [A:w1 | B:w2] 的第二种带权重版本，截至这句话被写下时仍由 **NAIFU 端独占(且本语法在 NAIFU 端的中括号是不必要的)**，若在 WEB-UI 端上强行使用则会导致权重数字被作为文本读取，虽然会让画面变得不同但实际上并非加权导致的效果。它的运作方式和双端都支持的 [A | B] 略有不同但效果类似，相较而言有着支持自定义比例的独特优势。</p>
+<p>​        当然，WEB-UI 有着看上去类似的 [(A:w1) | (B:w2)] 语法，<strong>但它的本质其实是嵌套了一层加权</strong>。这样的加权是对于整个咒语而言而非对于中括号内的其它部分而言的，作用域不同，所以笔者不认为这和 NAIFU 端的写法完全相同。</p>
+<p>​        融合描绘不可嵌套，但同样支持逗号分割。<strong>融合描绘擅长将两种事物混合为一起</strong>，比如 a [dog | frog] in black background。</p>
+<p>​        这两个高阶语法有着明显的区别，<strong>尤其是在高步数下更不可以一概而论</strong>。分步描绘的 40 步 A 再加上 40 步 B 最后可能形成一个带有 B 基底特征的 A，但它会表现出明显的分立感。而融合描绘的 40 步 A 再加上 40 步 B 最后将形成简直像是化在一起的融合体。</p>
+<p><img src="https://i0.hdslb.com/bfs/article/4adb9255ada5b97061e610b682b8636764fe50ed.png@progressive.webp" alt="img"></p>
+<h1 id="-4"><a href="#-4" class="headerlink" title=""></a></h1><h1 id="短元素，中元素与长元素"><a href="#短元素，中元素与长元素" class="headerlink" title="短元素，中元素与长元素"></a>短元素，中元素与长元素</h1><p>​        咏唱大致有着三种不同形式——最常见的<strong>直接咏唱</strong>、稍不常见的<strong>短句咏唱</strong>和堪称行为艺术一般的<strong>长咏唱</strong>。</p>
+<p>​        假设要生成一个有着黄色头发、蓝色眼眸、白色上衣、红色裙子、黑色裤袜的全身坐姿二次元美少女，且强调服饰颜色，那么这三种咏唱分别看上去大概是这样的：</p>
+<p><strong>直接咏唱(pitch 式咏唱)：</strong></p>
+<p><strong>masterpiece, best quality, 1 girl, (blue eyes), (yellow hair), (white clothes), (red skirt), (black leggings), sitting, full body</strong></p>
+<p><strong>短句咏唱(AND 强调咏唱)：</strong></p>
+<p><strong>masterpiece, best quality, 1 girl, (blue eyes) AND (yellow hair), (white clothes) AND (red skirt) AND (black leggings), sitting, full body</strong></p>
+<p><strong>长咏唱(自然语言咏唱)：</strong></p>
+<p><strong>masterpiece, best quality, (1 girl with blue eyes and yellow hair wearing white clothes and red skirt with black leggings), sitting, full body</strong></p>
+<p>​        注意短句咏唱的 AND 必须是三个大写字母，AND 两侧的小括号是不必要的(但建议加上)，这是一个专用语法，不过因为效果仍未明晰所以不单独介绍。此外，该语法并不能应用于所有采样方法，例如 DDIM 就不支持 AND，会导致报错。</p>
+<p>​        这三种咏唱方式有什么区别呢？且看同一个种子，以至上而下的顺序分别使用它们的区别：</p>
+<p><img src="https://i0.hdslb.com/bfs/article/75cd57d3e15466f2298f3b7b6d16ed9050718b91.png@942w_447h_progressive.webp" alt="img"></p>
+<p><img src="https://i0.hdslb.com/bfs/article/f4ded71735216db4b318abd2eff76f0ffbd8071c.png@942w_455h_progressive.webp" alt="img"></p>
+<p><img src="https://i0.hdslb.com/bfs/article/7a0b941fc27bc323568cb8b4950d45432ef30cfa.png@942w_443h_progressive.webp" alt="img"></p>
+<p>​        首先，相似的构图证明了不同咏唱方法不会显著改变咒语的解析方式——毕竟就连调换各 prompt 顺序都会显著让图片改变，因此可以证明不同咏唱方法在大方向上是一致的。</p>
+<p>​        不难发现，魔法师们最常用的<strong>直接咏唱</strong>总是难以很好地绑定元素颜色，有两张图片出现了明显的元素颜色错误。而<strong>短句式咏唱</strong>虽仍有两张图片出现了明显元素颜色错误，但是错误的视觉占比变小了。<strong>长咏唱没有出现明显元素颜色错误</strong>，很好地处理了各个颜色与元素的绑定关系。</p>
+<p>​        这就是最早探索元素绑定的<strong>“蓝黄白红黑”试验</strong>。试验内容仅限简单场景，但更多后续探究证明了此结论在复杂画面中也一定程度上适用——虽然效果相较于简单场景而言稍不明显，但在提升稳定性方面有所帮助。<strong>长咏唱能加强主体与元素之间的绑定关系、提高不同元素之间的区分度</strong>，在有明确绑定需求的情况下优于 pitch 式咏唱；<strong>直接咏唱则更擅长处理关系要求不强的情景</strong>，往往能营造更多样化的场面；短句式咏唱介于两者之间。</p>
+<p>​        长咏唱的关键在于<strong>也几乎必须</strong>要用一个小括号包括整个句子，以略微提升权重(权重略大于 1.0 的情况下表现最佳，但太大就有点过头了)，否则无法和直接咏唱拉开差距。</p>
+<p>​        这即为“<strong>元素污染</strong>”这一概念的根本原因和初级建议应对方法。</p>
+<p><img src="https://i0.hdslb.com/bfs/article/4adb9255ada5b97061e610b682b8636764fe50ed.png@progressive.webp" alt="img"></p>
+<h1 id="-5"><a href="#-5" class="headerlink" title=""></a></h1><h1 id="我的法杖不听话了？"><a href="#我的法杖不听话了？" class="headerlink" title="我的法杖不听话了？"></a>我的法杖不听话了？</h1><p>​        有的时候会返回黑色图片，俗称<strong>黑图</strong>。</p>
+<p>​        黑图最简单直接的原因是<strong>显存爆了</strong>，查看后台是否出现类似于 CUDA out of memory，如果出现那就真的是显存爆了，提高配置或降低画布大小吧。</p>
+<p>​        <strong>但更大的可能是显存没爆。</strong>显存没爆要分三种情况：</p>
+<p>​        1.因为内容不够的模型有着明显的局限性，当一段咒语太过精简、画布还太大，这会导致自由度太大，<strong>超出模型理解范围</strong>。比如在 2k*2k 那么大的画布却只要生成一个简单背景&#x2F;无场景&#x2F;无细节指定单人像(masterpiece, 1 girl)，那么模型必然将因无法理解而黑图。</p>
+<p>虽然现在常见的 4g 模型与 7g 模型能很好地满足日常使用，但是对于某些极端情况依然是“不够”的。<strong>此时建议调整咒语，根据画布大小酌情扩增</strong>。</p>
+<p>​        2.当一段咒语太过繁杂、画布还太小。这种情况是上一种的反向，但原因也是超出模型理解范围。解决方法同样是建议调整咒语，根据画布大小<strong>酌情精简</strong>。</p>
+<p>​        3.当一段咒语的结构出现明显问题。<strong>请参照后续章节进行解决</strong>。</p>
+<p>​        不过在更多时候，法杖不听话的表现并不是黑图。例如在比 2k<em>2k 稍小一些的 1.2k</em>1.2k 画布中，可能会出现如下情况：</p>
+<p><img src="https://i0.hdslb.com/bfs/article/e786b808d32e992e006ab2c35268b33dc9cfab2a.png@942w_942h_progressive.webp" alt="img"></p>
+<p><strong>masterpiece, 1 girl, white hair, red eyes</strong></p>
+<p>​        明明要求 1 girl，但为什么它生成了 <strong>2 个</strong>二次元美少女？</p>
+<p>​        现在我们回想刚才的黑图情况。AI 完全无法理解咒语的最大原因是自由度过高，而缩减画布可以降低自由度。但对于这段如此简单的咒语而言，将画布缩减为 1.2k*1.2k 依然显得有些<strong>太过自由</strong>了。画完一个美少女之后该怎样填充剩下的画布呢？AI 可能会使用纯色背景、构筑一个简单的空间，但它更可能会做的事情是——<strong>把已有的东西重复再画一份</strong>。(如果往深处讲，那就要涉及到目前 SD 训练模型时的方法导致目前 AI 的局限性。SD 训出来的模型其实并不理解数字，对于 AI 而言 1 girl 和 2 girls 并不互相冲突，再加上懂得都懂的那些训练集里的各种共有 tag 会给它们一定程度上的联系，所以在无物可画但必须要填充画面时倾向于多画一份。)</p>
+<p>​        所以要解决这个问题也不难。既然它自由度过高，那么加长咒语让它有更多可画之物，<strong>限制它的自由度即可</strong>。</p>
+<p><img src="https://i0.hdslb.com/bfs/article/d709a84f85f07ded362a810cb311ddf34e029036.png@942w_942h_progressive.webp" alt="img"></p>
+<p><strong>masterpiece, 1 girl, solo, white hair, red eyes, black gown, in room, chair, vase, red carpet</strong></p>
+<p>​        <strong>High res. fix 也能解决此类问题，但它是利用先在小分辨率渲染再放大到目标分辨率的方法。最符合字面意义的做法还是直接从根源下手。这即为“元素溢出”这一概念的根本原因和初级建议应对方法。</strong></p>
+<p>​        最后是一些碎碎念…</p>
+<p>​        不必为每个 prompt 都加上过多小括号来提高权重，如果你发现你真的需要给绝大多数元素都加上四五个小括号才能让你想要的东西确保出现，那么更建议酌情普遍删掉一些括号，改为拉高 CFG Scale ，比如 12 甚至 14。在极端情况下，给单个 prompt 加上过多权重，可能会导致自由度过小而黑图。</p>
+<p>​        除非明确清楚重复 prompt 意味着什么、且有强烈的对应需求，否则<strong>不建议重复输入 prompt</strong>。重复输入 prompt 的语义相当复杂，不在入门范畴内。</p>
+<p><img src="https://i0.hdslb.com/bfs/article/4adb9255ada5b97061e610b682b8636764fe50ed.png@progressive.webp" alt="img"></p>
+<h1 id="-6"><a href="#-6" class="headerlink" title=""></a></h1><h1 id="不必保持如此神秘的敬畏…"><a href="#不必保持如此神秘的敬畏…" class="headerlink" title="不必保持如此神秘的敬畏…"></a>不必保持如此神秘的敬畏…</h1><p>​            既知が世界だ，未知はいらない！</p>
+<p>​            未知的，不需要。已知的，才是世界！</p>
+<h1 id="魔法的极致或许是科学"><a href="#魔法的极致或许是科学" class="headerlink" title="魔法的极致或许是科学"></a>魔法的极致或许是科学</h1><p>​        了解各类 prompt 的存在并不意味着就掌握了一切，摘抄别人的 prompt 囫囵吞枣地使用也不是上乘。如果想要让 AI 创作出更佳的作品，那么还需要深入了解各个 prompt 到底有着何等作用，以备日后使用。<strong>各个 prompt 之间的互相影响如同魔法反应一样，大多数情况下并不像是仅仅简单字面意义上的互相叠加那样简单</strong>。</p>
+<p>​        举个例子，比如 an extremely delicate and beautiful girl 其实就会导致不少风格化表达被覆盖；而 light 用作颜色在很多情况下不是指淡而是发光，甚至在某些稀有的组合里还专指黄光；让一个角色手上握着武器可能不仅仅要 holding weapon 还需要加上 weapon 本身，诸如此类。</p>
+<p>​        <strong>因此，各类科学分析方法甚至是研究方法都是有必要的。</strong>上文介绍的<strong>“蓝黄白红黑”试验</strong> 就是它的体现之一。</p>
+<p><img src="https://i0.hdslb.com/bfs/article/4adb9255ada5b97061e610b682b8636764fe50ed.png@progressive.webp" alt="img"></p>
+<h1 id="-7"><a href="#-7" class="headerlink" title=""></a></h1><h1 id="元素魔法？定性定量分析法！"><a href="#元素魔法？定性定量分析法！" class="headerlink" title="元素魔法？定性定量分析法！"></a>元素魔法？定性定量分析法！</h1><p><strong>授人与鱼不如授人与渔。</strong></p>
+<p>​        对于同一组 prompt 而言，魔法师们常以良品率作为无意识的定性分析的结果，但对于其它方面也可以进行分析，比如<strong>单个 prompt</strong>。</p>
+<p>​        SD 模型基于种子(seed)来进行生成，<strong>如果条件(prompt)和种子(seed)都相同，则生成的图必然相同。利用这个特性可以对不同的 prompt 进行定定性分析</strong>，填写一个种子，固定绝大多数 prompt，然后调整&#x2F;添加想要测试的那一个 prompt，来确定它的作用、效果。</p>
+<p>​        想知道一个 prompt 是否真的有意义吗？是否真的有传言所说的种种作用？它和某些组合的搭配真的很好吗？来定性分析它吧。</p>
+<p><img src="https://i0.hdslb.com/bfs/article/1e316a7358b8e149cd1d5e786e88127529f4f286.png@942w_308h_progressive.webp" alt="img"></p>
+<p>​        介绍如何使用 Script 中的 X&#x2F;Y plot(X&#x2F;Y 坐标图)来辅助分析。</p>
+<p><img src="https://i0.hdslb.com/bfs/article/d4a43d99de59dc5e285fdb17aed22f88f2623104.png@647w_173h_progressive.webp" alt="img"></p>
+<p>​        在输入框输入等待被替换的 prompt，然后使用 X&#x2F;Y 的 Prompt S&#x2F;R 功能。</p>
+<p><img src="https://i0.hdslb.com/bfs/article/b0a2d5f5c91450d57ca6df443874ad901a46a45e.png@942w_575h_progressive.webp" alt="img"></p>
+<p>​        在右侧的 X values 中进行填写。<strong>第一个 prompt 是被替换位点</strong>，而后面的则是希望替换为的 prompt，最后生成即可得到结果。</p>
+<p><img src="https://i0.hdslb.com/bfs/article/8c231dcd6fa480f076dc103878d32e0852a09033.png@942w_297h_progressive.webp" alt="img"></p>
+<p>​        除此之外还可以尝试其它不是 Prompt S&#x2F;R 的选项，比如用 Seed 比较不同种子，用 Step 比较不同步数，诸如此类。更深一步则是进行多组分析，以及通过排列组合或其它统计方法来确定多个要素之间的作用等。</p>
+<p>​        如果不做定性&#x2F;定量分析，那么可能将持续沉浸在知其然不知其所以然的程度，也可能仅满足于妙手偶得而产生相对片面的理解。</p>
+<p>​        <strong>始终记得赛博魔法的本质是科学。</strong></p>
+<p><img src="https://i0.hdslb.com/bfs/article/4adb9255ada5b97061e610b682b8636764fe50ed.png@progressive.webp" alt="img"></p>
+<h1 id="-8"><a href="#-8" class="headerlink" title=""></a></h1><h1 id="力大砖飞，超级步数出奇迹"><a href="#力大砖飞，超级步数出奇迹" class="headerlink" title="力大砖飞，超级步数出奇迹"></a>力大砖飞，超级步数出奇迹</h1><p>​        在上文基础部分，笔者推荐在简单情况下将步数设为不算高的数值，因为在简单画面的情况下步数过高也似乎没有什么好细化的。</p>
+<p>​        <strong>但要是在一个细节稍复杂的场景里把步数做得很高很高那么会发生什么？</strong></p>
+<p><img src="https://i0.hdslb.com/bfs/article/993edd112de15dac8f6ff9c639408f3bc639c8d5.png@942w_188h_progressive.webp" alt="img"></p>
+<p><strong>(masterpiece), best quality, 1 girl, red eyes, white hair, white gown, forest, blue sky, cloud, sun, sunlight</strong></p>
+<p>​        不难发现画面的确变得精细了。空中的云变得更真实，人物背景从简单的树林过度到有层次的树林再变成土丘上的树林。当然，最显著的还是人物体态的变化——虽然手部的举起与放下之间似乎无法分辨出什么规律，但似乎也有着被进一步细化的情况。总得来说，简略与详细都有独到之处，是萝卜白菜各有所爱的程度，也难怪大多数情况下认为步数过高没有特别的收益…</p>
+<p>​        <strong>等等。我们刚刚是不是提到了手？</strong></p>
+<p><img src="https://i0.hdslb.com/bfs/article/27dab041e515bf91b695246d11ff42e423100311.png@942w_399h_progressive.webp" alt="img"></p>
+<p><strong>(masterpiece), best quality, 1 girl, red eyes, white hair, white gown, hands</strong></p>
+<p>​        人物整体在 20 步就已经奠定完毕，后续步数没有显著改动，但是手却不一样。20 步的手就是一团错位的麻花，40 步虽然显得扭曲但是已经能和胳膊接上，60 步除了部分手指以外都做得不错，80 步更是在此基础上进一步降低了融化程度。虽然 80 步的手也没有达到理想中的效果，但是不难发现<strong>高步数下，人物手部的表现有着明显提升</strong>。</p>
+<p>​        这个结论在绝大多数情况都适用——如果想要特别细化手部表现力，那么请忽略上述步数建议，将步数拉到 80 甚至更高。而进一步推论是，<strong>高步数在合适 prompt 的引导下，对于大多数细小、解构复杂的区块都效果拔群</strong>，只是对于大块非复杂场景方面的营造存在显著边际效应。当然，如果场景本就复杂还希望细化诸如手部的位置，那就请 120 起步吧。</p>
+<p>​        <strong>可是，最新的研究表明：就算想要修手，也未必要如此高的步数？</strong></p>
+<p><img src="https://i0.hdslb.com/bfs/article/4adb9255ada5b97061e610b682b8636764fe50ed.png@progressive.webp" alt="img"></p>
+<h1 id="-9"><a href="#-9" class="headerlink" title=""></a></h1><h1 id="魔法公式入门"><a href="#魔法公式入门" class="headerlink" title="魔法公式入门"></a>魔法公式入门</h1><p>​        <strong>首先，prompt 并不可以随意堆积，不是越多越好。</strong></p>
+<p>​        模型读取 promot 有着明确的先后顺序，这体现为理解顺序的不同。比如又一个著名的<strong>“少女与壶”****试验</strong>所展示的：</p>
+<p><img src="https://i0.hdslb.com/bfs/article/769baac92b77c88e1bb04a4fd024c9b88d35c098.png@942w_471h_progressive.webp" alt="img"></p>
+<p><strong>masterpiece, 1 girl, red eyes, white hair, blue pot</strong></p>
+<p><img src="https://i0.hdslb.com/bfs/article/4fbb80dc279e89f6585648f069549fb291011ef5.png@942w_471h_progressive.webp" alt="img"></p>
+<p><strong>masterpiece, blue pot, 1 girl, red eyes, white hair</strong></p>
+<p><img src="https://i0.hdslb.com/bfs/article/a811ec9214d190d17c6c4b441980a20e7fccaf36.png@942w_471h_progressive.webp" alt="img"></p>
+<p><strong>masterpiece, blue pot, ((1 girl)), red eyes, white hair</strong></p>
+<p>​        在种子相同且其它参数也完全相同的情况下，仅仅是颠倒了 1 girl 与 blue pot 的顺序，<strong>构图</strong>就产生了极大的变化。</p>
+<p>​        不难发现，1 girl <strong>在前</strong>的情况下，<strong>画面围绕着人物展开</strong>，blue pot 体现为环绕着人物的场景物件。而 blue pot <strong>在前</strong>的情况下，<strong>画面围绕着盆展开</strong>，人物反而退出了画面中心，甚至哪怕加大 1 girl 权重也无法让人物比盆在画面中更重要。</p>
+<p>​        这其中的原理不适合在入门魔导书中详细解释，但可以提供启发 —— <strong>prompt 的顺序将影响画面的组织方式</strong>，越靠前的 prompt 对构图的影响越“重”，而越靠后的则往往会成为靠前 prompt 的点缀或附加物。顺序对于构图的影响在大多数情况下甚至大于权重的影响。</p>
+<p>​        虽然这个试验本身只涉及了一个场景，但在更多后续探究与复杂场景构筑中都证明了它具备的有效性。<strong>不过它也非绝对保障，在少数情况或极其复杂的场景中，叠加式构图有可能因为其它尚未在此介绍的原因而失效</strong>，但总得来说它能增强稳定性。</p>
+<p>​        <strong>这就是用于替代“顺序权重论”的“顺序叠加论”</strong>。而进一步可以延伸出构筑合理咒语的灵感。将最着重体现的元素靠前摆放，然后是它的细节，再将抽象、全局化、影响极度强烈的 prompt 写在靠后处，例如场景和画风滤镜。</p>
+<p>​        所以我们开始构筑一套简单的人像召唤魔法顺序公式。将上述经验总结为：</p>
+<p>​        <strong>前缀+需要重点突出的物件&#x2F;背景+人+人物特征&#x2F;元素+人物动态+服饰整体+服饰细节元素+大背景+背景元素+光照效果+画风滤镜+微小辅助元素+后缀</strong></p>
+<p>​        这是对“标准三段术式”结合而得出的<strong>“标准顺序公式”</strong>，包括了“标准三段术式”，是它的进一步发展。不难发现这种公式的构成符合上述理论，每一个相对靠后的部分都是对相对靠前的部分的补充，模块化明确，有着极强的可维护性，且<strong>最重要的特性是易于理解与交流</strong>。</p>
+<p>​        上文可能过于抽象，因此强烈推荐参考标准三段术式的细节解析，可以互相印证互相补充：</p>
+<p><strong>标准三段术式及绚丽术入门与解析v2</strong></p>
+<p><strong><a target="_blank" rel="noopener" href="https://docs.qq.com/doc/DSHBGRmRUUURjVmNM">https://docs.qq.com/doc/DSHBGRmRUUURjVmNM</a></strong></p>
+<p>​        <strong>熟悉或熟练这种公式能令一个刚接触 AI 的新手更顺畅地表达自己想要表达的画面，要是悟性够好生活经验够丰富则还可以触及高表现力</strong>。比如它可以生成：</p>
+<p>​        一个二次元美少女+收束的长发&#x2F;飘散的长发&#x2F;占满屏幕的长发+复杂的哥特服饰&#x2F;长裙&#x2F;旗袍&#x2F;等一系列可以上花纹或褶皱的衣服+一个帅气或优雅的动作&#x2F;看淡生死面无表情+复杂的建筑物或自然风景或宇宙空间或阴暗背景+强大或温柔的光照+魔法特效+大量星点&#x2F;鲜花&#x2F;粒子效果&#x2F;填充物+尝试营造cg感的9:16画布&#x2F;1:2画布+画风滤镜…</p>
+<p>​        等等，诸如此类能直接进入元素法典早期卷的作品(从入门到入典)。在有经验验证的理论基础上进行自由创作，往往能取得令人感到满意的结果。</p>
+<p>​        不过标准顺序公式也有许多缺陷，它对于某些独特的情况可能不适用，即使作为特解也一定会在将来被更先进的经验所替代。<strong>实际运用过程中应当根据要求进行灵活调整</strong>，比如根据实际使用情况简化&#x2F;删去某些环节，或根据实际要求进一步增加某些环节，甚至为了某些特殊效果而部分违反公式顺序。但它的“叠加式”思路，与其背后所蕴含的分析思想才是精髓。</p>
+<p>​        <strong>笔者坚信赛博魔法的终极形态是基于顺序和关系的模块化发展、本质是对于经验进行总结所得出的具体规律，是可以使用科学方式进行一定程度上的研究的</strong>。</p>
+<p><img src="https://i0.hdslb.com/bfs/article/4adb9255ada5b97061e610b682b8636764fe50ed.png@progressive.webp" alt="img"></p>
+<h1 id="-10"><a href="#-10" class="headerlink" title=""></a></h1><h1 id="-11"><a href="#-11" class="headerlink" title=""></a></h1><h1 id="向着魔导科学的最根源"><a href="#向着魔导科学的最根源" class="headerlink" title="向着魔导科学的最根源"></a>向着魔导科学的最根源</h1><p>​        或许…(划掉)…才是这个世界的唯一神，所有人都将是它的奴仆。</p>
+<h1 id="重新解析咒语构成"><a href="#重新解析咒语构成" class="headerlink" title="重新解析咒语构成"></a>重新解析咒语构成</h1><p>​        上文介绍了标准顺序公式，但能不能再给力一点？</p>
+<p>​        <strong>当然能！</strong></p>
+<p>​        我们再仔细想想上文的标准顺序公式是怎样的思路——浓缩到极致，就是引导质量、突出物、人、细节、背景、修饰。不错，但当初为什么要把人和突出物分开？为什么修饰一定要在后方？背景又是怎样界定的？</p>
+<p>​        如果读者已经尝试过许多此标准顺序公式，那还能继续问出——为什么有时候画面没有严格按照顺序构图？为什么有时候修饰的效果不够拔群？</p>
+<p>​        无数个疑问都迫切指向了新的思考方式。<strong>现在我们将一切都抽象为“物”</strong>。人是一个物，人身上的一些小挂饰也是一个物(无论这个挂饰的数量是多少)，背景里的建筑也是一个物，诸如此类。<strong>物！</strong></p>
+<p>​        每个物都有能力成为主要描绘对象。如果是人，那么可以是人的立绘或特写，如果是挂饰，可以是它的展览模样，甚至背景大建筑也可以成为全景的视觉中心。<strong>而当画面中存在多个物时，将不可避免地分为主要的物和次要的物</strong>，次要的物还可以有相对它而言更次要的物。这和此前的基础顺序公式不同，因为基础顺序公式默认一切事物都可以互相叠加——<strong>但事实证明不是那样。</strong></p>
+<p><img src="https://i0.hdslb.com/bfs/article/4adb9255ada5b97061e610b682b8636764fe50ed.png@progressive.webp" alt="img"></p>
+<h1 id="-12"><a href="#-12" class="headerlink" title=""></a></h1><h1 id="无法被叠加的次要物"><a href="#无法被叠加的次要物" class="headerlink" title="无法被叠加的次要物"></a>无法被叠加的次要物</h1><p>​        不难注意到有些“物”像是无视了叠加式构图原则那样，除非权重高到让它占满屏幕，否则往往只能作为配角存在、难以被其它“物”作为叠的目标。这些“物”天生有着被视作次要的特征，和许多能做主能做次的物并不相同。</p>
+<p>​        那么什么因素决定哪些物更倾向于被视为次要呢？<strong>终极答案是生活经验</strong>。</p>
+<p>​        (除非特别声明，否则以下对比均默认来自于同一 seed)</p>
+<p>​        当 1 girl 和 earing 简单结合时，无论两者谁先谁后，最后都会变成“一个二次元美少女带着耳环”的样子，不会在简短描述下就轻易地出现诸如“美少女向前抬手捧着耳环、耳环在镜头前是一个特写、美少女的身体被景深虚化”的情况。因为在我们的生活常识中，大多数这两个“物”结合的情况都是前者，后者在作品描绘里出现的情况极少，因而这两者<strong>即使是顺序调换也只是让美少女是否摆出展示耳环的姿势，无法轻易地切换主次</strong>(继续深讲就到训练集的部分了，虽然它的本质是训练集与LatentDiffusion对于自然语言的处理，但考虑到大多数组成训练集的作品都取自于生活经验 &#x2F; 常见创作想象，且自然语言处理本就是努力拟合生活经验的过程，所以实际上并无明显不同，因而在此打住话题)</p>
+<p><img src="https://i0.hdslb.com/bfs/article/e6914312e91f0cc020a2d7605b53897c1be53159.png@942w_471h_progressive.webp" alt="img"></p>
+<p><strong>masterpiece, 1 girl, earing</strong></p>
+<p><strong>masterpiece, earing, 1 girl</strong></p>
+<p>​        但当 1 girl 和 lake 结合就不一样了。lake 虽然往往被当做背景，但它完全可以成为风景画的主要描述对象，所以在除去刻意设置了镜头的情况下——<strong>当 1 girl 在前</strong>，重要的“物”为人物，所以画面往往会让人物占据主要部分(包括人物全身像站在景物前、人物半身像加远景，甚至人物直接泡水)，<strong>而当 lake 在前</strong>，重要的“物”为湖，湖在我们的生活经验中的确可以成为主要对象，因此画面往往会让人物显得更小、更融入风景或距离视角更远。</p>
+<p><strong>masterpiece, 1 girl, lake</strong></p>
+<p><strong>masterpiece, lake, 1 girl</strong></p>
+<p>​        当“物”的数量大于 2，这个规律也依然适用， 1 girl 和 lake 和 bike 以及 earing 之间的排列组合符合上述情况：earing 总是忽略顺序作为次要装饰在人物的耳边，人物、湖、自行车则根据顺序不同而有不同的强调位置，其中 bike 即使靠后也往往不会过度隐入 lake。</p>
+<p><strong>masterpiece, 1 girl, lake, bike, earing</strong></p>
+<p>​        但更重要的是，<strong>运用得当的次要物可以一定程度上打破叠加式顺序结构</strong>。因为 AI 会努力把所有咒语中的内容都画出来，而次要物们恰好大多数是小块结构。在如第二张图一样的远景中画出让 earing 被 AI 认为是不可能的，所以它会强行打破叠加式结构，让人物被聚焦到画面相对更前的位置，作为对次要物的强调。</p>
+<p><strong>masterpiece, lake, earing, bike, 1 girl</strong></p>
+<p>​        lake 在前，但是效果更接近于想象中 lake 在后的情况。在这种强调情况下，甚至 1 girl 在前也无法让它显著地再次提高强调。</p>
+<p><strong>masterpiece, lake, 1 girl, earing, bike</strong></p>
+<p>​        无论怎么说，它从原理和实际表现效果都和人有(一点点)相似之处。虽然 AI 绘画看上去是一步成型，但它一定程度上还是会根据“物”与“物”之间的关系来决定构图，并结合场景与反常情况无视部分顺序。</p>
+<p>​        所以我们先总结出某种通用顺序公式的<strong>雏形</strong>：</p>
+<p>​        <strong>前缀+“物1”+“物1的各种次要物”+“物2”+“物2的各种次要物”+“物3”+“物3各种次要物”+…</strong></p>
+<p>​        其中“物1、2、3…”是逻辑上能轻易成为主要聚焦点、占据大画面比率的物件，“次要物”则反之。物按照希望的构图主次顺序排列，而将次要物顺序放在其附着对象之后是为了结构简洁明确，也是为了避免超出预期的反常强调。</p>
+<p>​        <strong>不难发现它是对基础顺序公式的进一步抽象化，但有一些细节处理不同。</strong></p>
+<h1 id="-13"><a href="#-13" class="headerlink" title=""></a></h1><p><img src="https://i0.hdslb.com/bfs/article/4adb9255ada5b97061e610b682b8636764fe50ed.png@progressive.webp" alt="img"></p>
+<h1 id="-14"><a href="#-14" class="headerlink" title=""></a></h1><h1 id="远近、光影与其它令人惊讶的东西"><a href="#远近、光影与其它令人惊讶的东西" class="headerlink" title="远近、光影与其它令人惊讶的东西"></a>远近、光影与其它令人惊讶的东西</h1><p>​        雏形去除了突出物体、人像和背景的地位差别，并解释了某些“物”难以参与到顺序公式的叠加式构成的原因。但它少了很多关键要素，比如颜色和形状怎么算？姿势和动作怎么算？光照、镜头、画风直接放在最后面真的是负责任的做法吗？还有用于给整个画面染色或营造氛围的引导词又该如何？</p>
+<p>​        继续提取。颜色、形状和其它形容词若是用于形容单个物件而不希望让它污染其它元素，则往往与物件本身合并，例如红色衣物通常会用 red clothes 而不是 clothes, red。同理圆形桌子、漂浮的缎带、绿色的飞行叶片也都类似，所以物的特征可以归入“物”环节中，与标准顺序公式的处理相同。</p>
+<p>​        然后我们为画面引入镜头要素。指定镜头能极其显著地提高画面质量，比如全景镜头往往能很好地展示风景，4 个词轻松爆杀大量早期堆景物的风景画。</p>
+<p>​        (除非特别声明，否则以下对比均默认来自于同一 seed)</p>
+<p><strong>masterpiece, lake, panorama, 1 girl</strong></p>
+<p>​        一切看似都是那么合理与自然，直到事情来到了复合镜头。</p>
+<p><strong>masterpiece, lake, panorama, 1 girl, close up</strong></p>
+<p>​        没人知道 close up 干啥去了，反正笔者不知道。现在我们同咒语换个种子。</p>
+<p>​        这是 close 了个什么？又 panarama 了个什么？</p>
+<p>​        这段咒语本来的意图是“在湖全景的旁边加入一个二次元美少女的特写”，但效果令人难蚌，而其实上面两种构图就是这段咒语能形成的全部构图了。</p>
+<p>​        其实仔细想想不难发现，AI 的确在努力按叠加顺序与镜头走，不过 lake 在前 1 girl 在后让它希望以湖作为主要元素，这就导致<strong>“本就含有顺序属性”的镜头</strong>被丢失或以令人感到匪夷所思(但对这套逻辑来说合情合理)的形式展现。</p>
+<p>调换镜头的顺序是无效的，生成的图片要么让人融入景物、要么在画面前端但大多数情况下无法达到“特写”的程度。</p>
+<p><strong>masterpiece, 1 girl, panorama, lake, close up</strong></p>
+<p>​        但调换“物”的顺序有效，一定程度上地。</p>
+<p><strong>masterpiece, 1 girl, close up, lake, panorama</strong></p>
+<p>​        所以可以初步得出结论，镜头的插入位点未必一定要是在咒语的最末端，尤其是需要复合镜头的情况。它可以插入在一切物之前、所意图修饰的那个屋之后、一切物之后，分别用于大幅影响整个画面、主要影响单个物+轻量地影响整个画面、轻量地影响整个画面。而光照也同理类似。</p>
+<p>​        但这说到底也是<strong>相对情况</strong>。上述测试采用了相同的种子，表明了一种写法相对于另一种写法在同种子的情况下更倾向于预期，<strong>不代表最终成品在绝对意义上总是符合预期</strong>。换句话说，这样能提高稳定度，但若需要彻底稳定则不能只寄希望于镜头控制，还应该合理安排其它元素。</p>
+<p>​        close up、close shot、medium view、panorama 这几个镜头控制十分好用，但它们在不同的位点影响力不同。光照也类似，在不同位点的 backlight 和 rembrandt lighting 对于人物或全画面的立体感影响也并不一样。</p>
+<p><strong>masterpiece, 1 girl, medium shot, backlight, lake, panorama, night, moon</strong></p>
+<p>​        可见在按顺序构图的情况下，根据需求选择镜头与光照对于画面质感与效果的提升有极大帮助。而更重要的是，通用顺序公式的<strong>雏形</strong>可以进化一次了：</p>
+<p>​        <strong>前缀+前置镜头效果+前置光照效果+[带描述的物x+物x的各种次要物+镜头效果和光照(如果必要)]*X+全局光照效果+全局镜头效果</strong></p>
+<p>​        <strong>镜头效果和光照效果勿过频</strong>，因为 AI 还不能很好地处理多个物体分别在不同镜头下的情况，而光照更是往往会影响图片的大部分区域。紧挨着的每个镜头与光照的正反顺序影响不大，但笔者个人感觉上述顺序的质量更佳，实际上可酌情调整。</p>
+<p><img src="https://i0.hdslb.com/bfs/article/4adb9255ada5b97061e610b682b8636764fe50ed.png@progressive.webp" alt="img"></p>
+<h1 id="-15"><a href="#-15" class="headerlink" title=""></a></h1><h1 id="通用顺序公式"><a href="#通用顺序公式" class="headerlink" title="通用顺序公式"></a>通用顺序公式</h1><p>​        最后一块拼图是画风。</p>
+<p>​        (除非特别声明，否则以下对比均默认来自于同一 seed)</p>
+<p><strong>masterpiece, 1 girl, sketch</strong></p>
+<p>​        先不去管因为画布过大导致的人像重复。总得来说，画风放在 1 girl 的前或后没有显著差别，似乎随便找个位点把画风词一插就完事了。在目前的入门范畴内，可以认为插入位点不同也没有特别显著地让 sketch 感有明显强弱变化，构图差异是可以理解或可以接受的。而让多个风格各自独立地共存并不在入门范畴。</p>
+<p>​        但除了 sketch、oil painting 此类明确表示画风的 prompt 之外，还存在着诸如 wallpaper、illustration、anime 等看似一点都不画风但又难以简单被归类为质量补正的东西。在许多魔法师眼中， <strong>wallpape****r</strong> 等要素应该和 <strong>masterpiece</strong> 算在一起作为前缀，可实际上它们往往能对画面产生质变，混合使用还可能产生可怕的化学反应。</p>
+<p><strong>masterpiece, 1 girl, yellow hair, blue eyes, lake</strong></p>
+<p><strong>masterpiece, wallpaper, 1 girl, yellow hair, blue eyes, lake</strong></p>
+<p><strong>masterpiece, illustration, 1 girl, yellow hair, blue eyes, lake</strong></p>
+<p>​        更何况还有许多未在此列出的东西，比如 highly detailed 本就会让画面部分地偏向于厚涂甚至油画(ultra-detailed 甚至不如它有用，是个以讹传讹；板：我不想背这个锅但确实我有频繁使用这个tag )，anime 会让画面线条偏向粗糙手绘但又不像 sketch 那样痕迹明显。</p>
+<p>​        很难绷。而且硬要追根究底下去的话，masterpiece 和 best quality 本质上也是一定因素是通过改变质感表现来提高画质的，再深想下去会让问题变成“到底怎样算美”。所以干脆根据使用率来做区分，将 masterpiece&#x2F;best quality 之外的一切“类质量前缀”算为画风引导。</p>
+<p>​        所以我们得到了最后的调整版：</p>
+<p>​        <strong>质量前缀+前置画风引导+前置镜头效果+前置光照效果+[带描述的物x+物x的各种次要物+镜头效果和光照]*X+全局光照效果+全局镜头效果+画风滤镜</strong></p>
+<p>​        其中，物x的排序按预期构图重要顺序排列，次要物的排序按颜色相近顺序整理排列。例外在于存在微小的人物的次要物时，景物的顺序主要在景物之间起效。所有镜头、光照和画风均为可选项，且为避免反应过于复杂考虑建议各不超过 3 种。</p>
+<p>​        <strong>这就是标志着真正入门的，通用顺序公式</strong>。通用顺序公式结合了标准顺序公式的全部内容，并体现了对于“物”之间关系的进一步思考，也将镜头处理纳入公式内。将顺序公式与前文提及的长短咏唱等技巧相结合，熟练运用，是一个真正赛博魔法师的必备素养。</p>
+<p><img src="https://i0.hdslb.com/bfs/article/4adb9255ada5b97061e610b682b8636764fe50ed.png@progressive.webp" alt="img"></p>
+<h1 id="-16"><a href="#-16" class="headerlink" title=""></a></h1><h1 id="是结束也是开始"><a href="#是结束也是开始" class="headerlink" title="是结束也是开始"></a>是结束也是开始</h1><p>​        <strong>通用顺序公式显然也不是一切的答案</strong>，毕竟它标志的是入门而不是大成——本魔导书所详细解释的一切内容都是入门级内容。它更像是对于如何理解 AI 运作方式的思考帮助，而不是能无脑解决所有难题的万用工具，实际操作依然需要更多经验总结来灵活变通。</p>
+<p>那么该如何进阶呢？(这句话有点太干涸了，等待板板润色)</p>
+<p>这里不作过多展开，仅留下一些思考线索：</p>
+<p>长咏唱能绑定元素，但为什么它的不稳定度反而比其它咏唱方式还高？</p>
+<p>分步绘画的画面在分步前后之间有什么关系？</p>
+<p>为什么分布绘画能一定程度上“识别”从何处替换物？</p>
+<p>每 1 step 在不同完成度下对于 AI 而言到底意味着多大的变化？</p>
+<p>不同种子同咒语的镜头为何在绝对意义上频频产生混乱？</p>
+<p>叠加式构图中“叠加”的根源是什么？</p>
+<p>不同 prompt 是如何产生互相联想关系与“建议前置”关系的？</p>
+<p>当一个 prompt 含有多个元素意义时，AI 会如何对颜色、形状等分别处理？</p>
+<p>为什么超高步数可以修手？为什么修手一定要那么高的步数？</p>
+<p>权重到底意味着什么？数量？画面占比？结构复杂度？</p>
+<p>重复输入 prompt 到底意味着什么？</p>
+<p>单个长单词也会被拆分吗？</p>
+<p>……</p>
+<p><strong>魔法的殿堂恢宏而瑰丽，无尽的回廊里昭示着无限的可能性。</strong></p>
+<p><strong>朝更远处进发吧。</strong></p>
+<h1 id="先等一等…"><a href="#先等一等…" class="headerlink" title="先等一等…"></a>先等一等…</h1><p>还记得最开始笔者提到过…</p>
+<p>prompt 可以识别一些特殊符号吗？</p>
+<p><img src="https://i0.hdslb.com/bfs/article/4adb9255ada5b97061e610b682b8636764fe50ed.png@progressive.webp" alt="img"></p>
+<h1 id="该死的流汗黄豆！你不要过来啊！"><a href="#该死的流汗黄豆！你不要过来啊！" class="headerlink" title="该死的流汗黄豆！你不要过来啊！"></a>该死的流汗黄豆！你不要过来啊！</h1><p><strong>魔法世界的集大成者居然是流汗黄豆表情，怎么会这样 —— 难道我们最终的归宿就是被流汗黄豆所支配吗？！</strong></p>
+<h1 id="♿-认-知-革-命-♿"><a href="#♿-认-知-革-命-♿" class="headerlink" title="♿ 认 知 革 命 ♿"></a>♿ 认 知 革 命 ♿</h1><p>​        如上文所述。</p>
+<p>​        还记得最开始笔者提到过 prompt 可以识别一些特殊符号吗？说到特殊符号，赛博魔法师们会想到什么？流汗黄豆？</p>
+<p>​        还真就是<strong>流汗黄豆</strong>。  😅 (这里不准出现流汗黄豆啊kora!</p>
+<p>​        准确来说，是以流汗黄豆为代表的各类 emoji 字符。</p>
+<p>​        先直接说结论。<strong>Emoji 可以直接作为 prompt 输入</strong>，作为 prompt 自然兼容上文提及的一切低阶语法高阶语法，而且单词效果强到可怕。</p>
+<p>​        笔者特地去翻了翻 SD 框架的处理部分，发现 emoji 符号的确没有被转义为英文，而是原原本本地就以字符形式被处理。笔者不知道到底是什么人以什么样的精神状态将 emoji 作为 tag 进行训练，但总之这件事情就这么发生了，emoji 它就是可以当作 prompt 用。</p>
+<p>​        那么为什么 emoji 如此强大呢？这里解释理由：</p>
+<p>​        Emoji 是<strong>单个</strong>字符，可以<strong>无视</strong> SD 框架对它识别时的一切拆分尝试，以<strong>最短的字符长度</strong>代表出一个概念。</p>
+<p>​        它的信息密度的分母是最小的，信息量与其它词相比却差不多，所以信息密度高到吓人，因而导致其<strong>准确度高到可怕</strong>。</p>
+<p>​        而还因为它信息密度如此之高，它受权重影响也大得难以描述，一对小括号就能体感上产生(prompt:1.35)左右的强大效果。</p>
+<p>​        想要修手？用✋或其它想要的手势。想要群像？👪屡试不爽。想要烟花背景？🎇驱散一切问题。想要难以被描绘的骷髅头骨？💀出场就是现在。铅笔画风？✏秒了。浮世绘？🎏解决。哪怕是最难凹的海盗船，也只需要一个🏴‍☠️就能展现了！甚至，只需要♿和动态模糊 ( motion blur )的描述，就能即时上演轮椅漂移的戏码。</p>
+<p>​        想要解决一切问题？看看有没有 E M O J I 可以表达它。</p>
+<p>所以赛博魔法师们可以在这里:</p>
+<p>真正的元素法典</p>
+<p><a target="_blank" rel="noopener" href="https://www.emojiall.com/zh-hans">https://www.emojiall.com/zh-hans</a></p>
+<p>找到 emoji 大全。</p>
+<p>老实说，</p>
+<p><strong>这比常见到的什么 tag 大全强了不知道多少倍。</strong></p>
+<p><strong>算了，这样的魔法世界还是毁灭吧。</strong></p>
+<p><img src="https://i0.hdslb.com/bfs/article/4adb9255ada5b97061e610b682b8636764fe50ed.png@progressive.webp" alt="img"></p>
+<h1 id="-17"><a href="#-17" class="headerlink" title=""></a></h1><h1 id="♿-蚌-埠-感-言-♿"><a href="#♿-蚌-埠-感-言-♿" class="headerlink" title="♿ 蚌 埠 感 言 ♿"></a>♿ 蚌 埠 感 言 ♿</h1><p>​        非常感谢各位的观看，但是非常感谢，总之非常感谢。</p>
+<p>​        前面忘了，中间忘了，后面忘了。</p>
+<p>​        一开始这本魔导书是一位可爱JK的个人经验集，但后来又不知道怎么回事莫名其妙变成了为新人提供从入门到精通的一条路径。又更后来，笔者们仔细想了想，世界之大无奇不有，五花八门的技巧总会迭代，我们何德何能敢说读完这一本就算精通啊？所以就变成了从麻瓜到入门()</p>
+<p>​        安装、第一句话、注意事项、技巧补充、公式总结，一切都是那么水到渠成。有许多技术都是随着本魔导书的编写一同被研究而出的，就比如标准顺序公式、分步描绘应用和通用顺序公式。当时笔者还在群内说，通用顺序公式就是入门时期的最强武器了，写完通用顺序公式就结束吧，这个阶段也没什么可写的啦——</p>
+<p>​        结果，就在 2022 年 11 月 2 日晚上 20 点左右，笔者为这魔导书编写感言的时候，关于 emoji 的认知出现了。这确确实实是打乱了一切，我们都绷不住了。紧急加章之后，在“啊差不多得了，这个世界还是毁灭了算了吧”这样的想法之下，我们为这本确实不完全科学的魔导书重新写下了另一版感言——也就是你现在正读到的这一版。</p>
+<p>​        😅  抱歉，流汗黄豆请不要出现，我们讨厌你。</p>
+<p>​        总之，元素同典在这里也算是完结了，感谢所有在编写过程中支持笔者的大家。我们下一本典（也许没有）再见！</p>
+<p><img src="https://i0.hdslb.com/bfs/article/4adb9255ada5b97061e610b682b8636764fe50ed.png@progressive.webp" alt="img"></p>
+<p>本文为我原创</p>
+<p>本文禁止转载或摘编</p>
+<p><a target="_blank" rel="noopener" href="https://search.bilibili.com/article?keyword=AI&from_source=article"> AI </a><a target="_blank" rel="noopener" href="https://search.bilibili.com/article?keyword=%E9%AD%94%E5%AF%BC%E4%B9%A6&from_source=article">魔导书 </a><a target="_blank" rel="noopener" href="https://search.bilibili.com/article?keyword=AI%E7%BB%98%E5%9B%BE&from_source=article">AI绘图 </a><a target="_blank" rel="noopener" href="https://search.bilibili.com/article?keyword=AI%E7%BB%98%E7%94%BB&from_source=article">AI绘画 </a><a target="_blank" rel="noopener" href="https://search.bilibili.com/article?keyword=NovelAI&from_source=article">NovelAI </a><a target="_blank" rel="noopener" href="https://search.bilibili.com/article?keyword=%E5%85%83%E7%B4%A0%E6%B3%95%E5%85%B8&from_source=article">元素法典 </a><a target="_blank" rel="noopener" href="https://search.bilibili.com/article?keyword=%E5%85%83%E7%B4%A0%E5%90%8C%E5%85%B8&from_source=article">元素同典</a></p>
+<ul>
+<li>​</li>
+<li>​</li>
+<li>​</li>
+<li>​</li>
+<li>​</li>
+</ul>
+<p>投诉或建议</p>
+<p>推荐文章</p>
+<p>更多精彩内容</p>
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/read/cv22514105?from=articleDetail">教你画像素画每周分享227期摘要：教你画像素画每周分享，本周全网精选像素画Top10。关键词：教你画，像素画，像素图，马赛克画，8bit，欣赏，素材，学习参考Sean YoungLena pixelsGlitchedPieXelephzXspriterFranekDante PixelsShiranuiMilosちぷしし鸡汤摘录1、说走就走的旅行值得珍惜2、AI时代，最核心的竞争力和技能或许不再是编程，计算，甚至分析能力，而是和大型语言模型的对话能力。完。教你画像素画绘画42100</a><a target="_blank" rel="noopener" href="https://www.bilibili.com/read/cv22426233?from=articleDetail">原创漫画《简明易懂的明日方舟》第一篇——刻俄柏（小刻）结 语 第一次做这种类型的漫画，自己也是很开心激动的！能够把自己喜欢的游戏用自己喜欢的方式表达出来真的很让人高兴！(<em>^▽^</em>） 这个作品也只是整个系列的开始，以后也会把其他干员也这么画出来，各位读者也敬请期待吧~ 还有，不光是干员，敌方单位也会考虑画的（如果有时间）！说不定会画几个自己的或是人的oc干员，有想让自己的oc干员被展现出来的同学可以等以后火起来再私聊哦<del>（当然目前不接这种活，毕竟没火起来嘛</del>） ps：对画风有疑问的同学，我是仿照《简明易懂的scp》的画风画的，当然也看得出画工并不是很出色，以半猫Josie_绘画6266</a><a target="_blank" rel="noopener" href="https://www.bilibili.com/read/cv22318404?from=articleDetail">PS SAI2 CSP安装包+安装教程分享三联，评论拿走哦AVICII—Tim绘画9754</a></p>
+<p>评论</p>
+<ul>
+<li>全部评论</li>
+<li>​</li>
+<li>按时间排序</li>
+</ul>
+<p>966</p>
+<p>280</p>
+<p>1641</p>
+<p>42</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/04/07/%E5%85%83%E7%B4%A0%E5%90%8C%E5%85%B8/" data-id="clg5w6b98000710m91fui4veq" data-title="" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2023/04/07/%E4%B8%AD%E5%9B%BD%E8%BF%91%E4%BB%A3%E5%8F%B2/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/04/07/%E7%94%A8chatgpt%E9%87%8D%E5%86%99%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6%E4%B9%A6/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/04/">April 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/04/07/%E4%B8%AD%E5%9B%BD%E8%BF%91%E4%BB%A3%E5%8F%B2/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/04/07/%E5%85%83%E7%B4%A0%E5%90%8C%E5%85%B8/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/04/07/%E7%94%A8chatgpt%E9%87%8D%E5%86%99%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6%E4%B9%A6/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/04/07/%E4%BB%A5%E4%B8%8B%E6%98%AF%E4%B8%80%E4%BA%9B%E7%A8%8B%E5%BA%8F%E5%91%98%E5%8F%AF%E4%BB%A5%E7%94%A8%E6%9D%A5%E7%BB%83%E6%89%8B%E7%9A%84%E7%A8%8B%E5%BA%8F%E9%A1%B9%E7%9B%AE%EF%BC%9A/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/04/07/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

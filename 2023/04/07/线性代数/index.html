@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="施密特正交化为了更好地说明施密特正交化方法的应用，我们举一个简单的例子。假设我们有一个向量组$V&#x3D;{\boldsymbol{v}_1,\boldsymbol{v}_2,\boldsymbol{v}_3}$，其中： $$ \boldsymbol{v}_1 &#x3D; \begin{pmatrix} 1 \ 1 \ 0 \end{pmatrix},\quad \boldsymbol{v}_">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2023/04/07/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="施密特正交化为了更好地说明施密特正交化方法的应用，我们举一个简单的例子。假设我们有一个向量组$V&#x3D;{\boldsymbol{v}_1,\boldsymbol{v}_2,\boldsymbol{v}_3}$，其中： $$ \boldsymbol{v}_1 &#x3D; \begin{pmatrix} 1 \ 1 \ 0 \end{pmatrix},\quad \boldsymbol{v}_">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-04-07T01:50:18.563Z">
+<meta property="article:modified_time" content="2023-03-24T04:43:02.658Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-线性代数" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/04/07/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" class="article-date">
+  <time class="dt-published" datetime="2023-04-07T01:50:18.563Z" itemprop="datePublished">2023-04-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="施密特正交化"><a href="#施密特正交化" class="headerlink" title="施密特正交化"></a>施密特正交化</h3><p>为了更好地说明施密特正交化方法的应用，我们举一个简单的例子。假设我们有一个向量组$V&#x3D;{\boldsymbol{v}_1,\boldsymbol{v}_2,\boldsymbol{v}_3}$，其中：</p>
+<p>$$ \boldsymbol{v}_1 &#x3D; \begin{pmatrix} 1 \ 1 \ 0 \end{pmatrix},\quad \boldsymbol{v}_2 &#x3D; \begin{pmatrix} 1 \ 0 \ 1 \end{pmatrix},\quad \boldsymbol{v}_3 &#x3D; \begin{pmatrix} 0 \ 1 \ 1 \end{pmatrix} $$</p>
+<p>我们希望将这个向量组转换为正交向量组。首先，我们选择第一个向量$\boldsymbol{q}_1&#x3D;\boldsymbol{v}_1$，并将它单位化，得到$\boldsymbol{u}_1&#x3D;\frac{\boldsymbol{q}_1}{|\boldsymbol{q}_1|}&#x3D;\frac{1}{\sqrt{2}}\begin{pmatrix} 1 \ 1 \ 0 \end{pmatrix}$。然后，我们计算向量$\boldsymbol{v}_2$在向量$\boldsymbol{q}_1$上的投影向量：</p>
+<p>$$ \operatorname{proj}_{\boldsymbol{q}_1}(\boldsymbol{v}_2) &#x3D; \frac{\boldsymbol{v}_2 \cdot \boldsymbol{u}_1}{\boldsymbol{u}_1 \cdot \boldsymbol{u}_1}\boldsymbol{u}_1 &#x3D; \frac{1}{2}\begin{pmatrix} 1 \ 1 \ 0 \end{pmatrix} ​$$</p>
+<p>我们将投影向量从向量$\boldsymbol{v}_2$中减去，得到新的向量$\boldsymbol{v}_2^\prime$：</p>
+<p>$$ \boldsymbol{v}_2^\prime &#x3D; \boldsymbol{v}<em>2 - \operatorname{proj}</em>{\boldsymbol{q}_1}(\boldsymbol{v}_2) &#x3D; \begin{pmatrix} \frac{1}{2} \ -\frac{1}{2} \ 1 \end{pmatrix} $$</p>
+<p>然后，我们选择第二个向量$\boldsymbol{q}_2&#x3D;\boldsymbol{v}_2^\prime$，并将它单位化，得到$\boldsymbol{u}_2&#x3D;\frac{\boldsymbol{q}_2}{|\boldsymbol{q}_2|}&#x3D;\frac{1}{\sqrt{2}}\begin{pmatrix} 1 \ -1 \ 2 \end{pmatrix}$。最后，我们计算向量$\boldsymbol{v}_3$在向量$\boldsymbol{q}_1$和$\boldsymbol{q}_2$张成的空间中的投影向量：</p>
+<h2 id="向量内积、长度、正交"><a href="#向量内积、长度、正交" class="headerlink" title="向量内积、长度、正交"></a>向量内积、长度、正交</h2><p>施密特正交化</p>
+<p>正交矩阵和正交变换</p>
+<p>方阵的特征值和特征向量</p>
+<p>相似矩阵</p>
+<p>对称矩阵的对角化</p>
+<h3 id="二次型"><a href="#二次型" class="headerlink" title="二次型"></a>二次型</h3><p>二次型是指一个二次齐次多项式，可以用矩阵的形式来表示。在数学中，二次型通常写作 $Q(\mathbf{x})&#x3D;\mathbf{x}^\top A\mathbf{x}$，其中 $\mathbf{x}$ 是 $n$ 维列向量，$A$ 是一个 $n\times n$ 的实对称矩阵。二次型在矩阵理论、线性代数、微积分和微分方程等数学领域都有广泛的应用。</p>
+<p>二次型可以用矩阵的形式来表示，其实是因为二次型有很好的矩阵性质。例如，二次型的矩阵 $A$ 是实对称矩阵，因此有很多好的性质，比如它的特征值都是实数，对应的特征向量可以正交化，而且它可以对角化为对角矩阵。这些性质在矩阵的谱分解和奇异值分解中都有很重要的应用。</p>
+<p>二次型在应用中也非常广泛，例如在物理中，二次型可以用来表示系统的能量；在机器学习和模式识别中，二次型可以用来表示样本之间的相似度或距离；在优化中，二次型可以作为目标函数或者约束条件等等。因此，二次型是一种非常重要的数学概念，有着广泛的应用。</p>
+<h4 id="实对称矩阵"><a href="#实对称矩阵" class="headerlink" title="实对称矩阵"></a>实对称矩阵</h4><p>实对称矩阵是指一个方阵 $A$ 满足 $A&#x3D;A^T$，即矩阵 $A$ 的转置等于它本身。因此，实对称矩阵的主对角线上的元素一定是实数，而其余的元素则对称地分布在主对角线两侧。</p>
+<p>实对称矩阵具有一些特殊的性质，使得它在很多应用中非常重要。例如，实对称矩阵的特征值一定是实数，而且特征向量可以相互正交，即对于任意两个特征向量 $v_i$ 和 $v_j$，有 $v_i^Tv_j&#x3D;0$。这些性质使得实对称矩阵在线性代数、物理学、工程学等领域都有广泛的应用，例如在矩阵对角化、正交变换、最小二乘法、自然振动等方面。</p>
+<h5 id="实对称矩阵的特征向量正交，证明"><a href="#实对称矩阵的特征向量正交，证明" class="headerlink" title="实对称矩阵的特征向量正交，证明"></a>实对称矩阵的特征向量正交，证明</h5><p>$$<br>\begin{bmatrix}1 &amp; 2 &amp; 3\2 &amp; 5 &amp; 6\3 &amp; 6 &amp; 9\\end{bmatrix}<br>$$</p>
+<p>设$A$为$n$阶实对称矩阵，$x$和$y$是$A$的两个特征向量，对应的特征值为$\lambda$和$\mu$，即$Ax&#x3D;\lambda x$和$Ay&#x3D;\mu y$。</p>
+<p>要证明$x$和$y$正交，即$x\cdot y&#x3D;0$。</p>
+<p>由实对称矩阵的性质可知，$A$的转置矩阵等于$A$本身，即$A^T&#x3D;A$。因此，将$x$和$y$的点积展开可得：<br>$$<br>x⋅y&#x3D;(x<br>T<br> ⋅y)<br>T<br> &#x3D;y<br>T<br> ⋅x<br>$$</p>
+<p>将$Ax&#x3D;\lambda x$和$Ay&#x3D;\mu y$代入上式可得：</p>
+<p>$x⋅y&#x3D;xT⋅y&#x3D;yT⋅x&#x3D;(Ax)T⋅y&#x3D;xT⋅(AT⋅y)&#x3D;xT⋅(A⋅y)&#x3D;xT⋅(μy)&#x3D;μxT⋅y$</p>
+<p>同样地，将$x^T\cdot(A\cdot y)$展开可得：</p>
+<p>$xT⋅(A⋅y)&#x3D;(xT⋅A)⋅y&#x3D;(Ax)T⋅y&#x3D;(λx)T⋅y&#x3D;λxT⋅y$</p>
+<p>将以上结果带入$x\cdot y$的式子中，得到：</p>
+<p>$x⋅y&#x3D;μxT⋅y&#x3D;λxT⋅y$</p>
+<p>由于$\lambda \neq \mu$，因此$x^T\cdot y&#x3D;0$，即$x\cdot y&#x3D;0$，证毕。因此，实对称矩阵的特征向量正交。</p>
+<h5 id="特征向量线性无关"><a href="#特征向量线性无关" class="headerlink" title="特征向量线性无关"></a>特征向量线性无关</h5><p>如果一个矩阵 $A$ 存在 $n$ 个线性无关的特征向量，那么这些特征向量组成的矩阵 $X$ 必定是可逆的。因此，我们可以得到以下结论：</p>
+<p>如果 $A$ 是一个对称矩阵，则 $A$ 的所有特征向量是线性无关的。</p>
+<p>证明如下：</p>
+<p>设 $A$ 的特征向量组成的矩阵为 $X$，即：</p>
+<p>��&#x3D;�ΛAX&#x3D;XΛ</p>
+<p>其中，$\Lambda$ 为 $A$ 的特征值组成的对角矩阵。</p>
+<p>由于 $A$ 是实对称矩阵，则 $A$ 的特征值均为实数。又因为 $A$ 的所有特征向量都是不同的，所以 $\Lambda$ 的对角线上没有重复的特征值。因此，$\Lambda$ 可逆。</p>
+<p>由于 $A$ 的所有特征向量是线性无关的，所以 $X$ 是满秩的，即 $X$ 可逆。</p>
+<p>因此，我们证明了当 $A$ 是对称矩阵时，$A$ 的所有特征向量是线性无关的。</p>
+<h5 id="证明-A-是实对称矩阵，则-A-的特征值均为实数"><a href="#证明-A-是实对称矩阵，则-A-的特征值均为实数" class="headerlink" title="证明$A$ 是实对称矩阵，则 $A$ 的特征值均为实数"></a>证明$A$ 是实对称矩阵，则 $A$ 的特征值均为实数</h5><p>要证明一个实对称矩阵 $A$ 的特征值均为实数，可以采用反证法。假设 $A$ 有一个非实特征值 $\lambda&#x3D;a+bi$，其中 $a$ 和 $b$ 均为实数，$i$ 为虚数单位。</p>
+<p>设 $x$ 是 $A$ 对应于 $\lambda$ 的特征向量，则有 $Ax&#x3D;\lambda x$，即：</p>
+<p>$Ax&#x3D;(a+bi)x$</p>
+<p>令 $y$ 为 $x$ 的共轭复数，即 $y&#x3D;\overline{x}$，则有：</p>
+<p>$Ay&#x3D;A\overline{x}&#x3D;\overline{Ax}&#x3D;\overline{(a+bi)x}&#x3D;(a−bi)\overline{x}$</p>
+<p>由于 $A$ 是实对称矩阵，有 $A&#x3D;\overline{A^T}&#x3D;A^T$，因此：</p>
+<p>$yTAy&#x3D;yTAx&#x3D;(Ay)Tx&#x3D;(λx)Tx&#x3D;λ(xTx)$</p>
+<p>又因为 $x\neq 0$，因此 $x^Tx\neq 0$，故有 $y^T Ay&#x3D;\overline{\lambda}(x^Tx)\neq 0$。</p>
+<p>另一方面，$y^T Ay&#x3D;y^T A^T y&#x3D;(Ay)^T y&#x3D;(\overline{\lambda}x)^T y&#x3D;\overline{\lambda}(x^Ty)$，由于 $x$ 和 $y$ 为复共轭向量，有 $x^Ty&#x3D;\overline{y^Tx}&#x3D;\overline{x^Ty}$，故 $x^Ty$ 是实数，因此 $y^T Ay&#x3D;\overline{\lambda}(x^Ty)$ 也是实数。</p>
+<p>由于 $y^T Ay$ 既是实数又是非零复数，故假设不成立，即 $A$ 的特征值均为实数。</p>
+<h3 id="二次型举例"><a href="#二次型举例" class="headerlink" title="二次型举例"></a>二次型举例</h3><p>二次型是指形如 $Q(\boldsymbol{x})&#x3D;\boldsymbol{x}^\top A \boldsymbol{x}$ 的二次多项式函数，其中 $\boldsymbol{x}$ 是 $n$ 维列向量，$A$ 是 $n \times n$ 的实对称矩阵。</p>
+<p>以下是一些二次型的例子：</p>
+<ol>
+<li>$Q(\boldsymbol{x})&#x3D;2x_1^2-3x_2^2+4x_1x_2$，对应的矩阵 $A&#x3D;\begin{bmatrix}2&amp;2\2&amp;-3\end{bmatrix}$。</li>
+<li>$Q(\boldsymbol{x})&#x3D;x_1^2+x_2^2+x_3^2$，对应的矩阵 $A&#x3D;\begin{bmatrix}1&amp;0&amp;0\0&amp;1&amp;0\0&amp;0&amp;1\end{bmatrix}$。</li>
+<li>$Q(\boldsymbol{x})&#x3D;3x_1^2-2x_2^2+4x_3^2+2x_1x_2-4x_1x_3+6x_2x_3$，对应的矩阵 $A&#x3D;\begin{bmatrix}3&amp;1&amp;-2\1&amp;-2&amp;3-2&amp;3&amp;4\end{bmatrix}$。</li>
+</ol>
+<p>注意，同一个二次型可以对应多个不同的矩阵，因为一个矩阵的选择可能依赖于所选择的坐标系。</p>
+<h5 id="标准型"><a href="#标准型" class="headerlink" title="标准型"></a>标准型</h5><p>对于二次型 $Q(x_1,x_2,\cdots,x_n)&#x3D;\sum_{i&#x3D;1}^{n}\sum_{j&#x3D;1}^{n}a_{ij}x_ix_j$，如果矩阵 $A&#x3D;(a_{ij})$ 为实对称矩阵，则存在一组正交基 ${u_1,u_2,\cdots,u_n}$ 使得 $Q$ 在这组基下的矩阵为对角矩阵，即</p>
+<p>$Q(x1,x2,⋯,xn)&#x3D;λ1y12+λ2y22+⋯+λnyn$2</p>
+<p>其中 $\lambda_1,\lambda_2,\cdots,\lambda_n$ 为 $Q$ 的 $n$ 个特征值，$y_1,y_2,\cdots,y_n$ 是 $x_1,x_2,\cdots,x_n$ 在正交基 ${u_1,u_2,\cdots,u_n}$ 下的坐标。</p>
+<p>这个对角矩阵称为二次型 $Q$ 的标准型。</p>
+<h5 id="举例说明"><a href="#举例说明" class="headerlink" title="举例说明"></a>举例说明</h5><p>假设有二次型 $q(x_1,x_2,x_3) &#x3D; 2x_1^2 - 4x_1x_2 + 6x_1x_3 + 4x_2^2 - 4x_2x_3 - 2x_3^2$，我们来将其化为标准型。</p>
+<p>首先，将二次型的系数矩阵 $A$ 写出来：</p>
+<p>�&#x3D;(2−23−24−23−2−2)A&#x3D;⎝⎛2−23−24−23−2−2⎠⎞</p>
+<p>然后，我们需要对矩阵 $A$ 进行对角化，得到 $A$ 的特征值和特征向量：</p>
+<p>�1&#x3D;6,�2&#x3D;−2,�3&#x3D;2λ1&#x3D;6,λ2&#x3D;−2,λ3&#x3D;2</p>
+<p>�1&#x3D;(3−21),�2&#x3D;(−101),�3&#x3D;(111)v1&#x3D;⎝⎛3−21⎠⎞,v2&#x3D;⎝⎛−101⎠⎞,v3&#x3D;⎝⎛111⎠⎞</p>
+<p>特征向量需要进行单位化，得到：</p>
+<p>�1&#x3D;114(3−21),�2&#x3D;12(−101),�3&#x3D;13(111)u1&#x3D;141⎝⎛3−21⎠⎞,u2&#x3D;21⎝⎛−101⎠⎞,u3&#x3D;31⎝⎛111⎠⎞</p>
+<p>构造正交矩阵 $P &#x3D; (\mathbf{u}_1, \mathbf{u}_2, \mathbf{u}_3)$，即：</p>
+<p>�&#x3D;(314−1213−2140131141213)P&#x3D;⎝⎛143−142141−21021313131⎠⎞</p>
+<p>然后，我们计算 $P^{-1}AP$：</p>
+<p>�−1��&#x3D;(6000−20002)P−1AP&#x3D;⎝⎛6000−20002⎠⎞</p>
+<p>最终，二次型 $q(x_1,x_2,x_3) &#x3D; 2x_1^2 - 4x_1x_2 + 6x_1x_3 + 4x_2^2 - 4x_2x_3 - 2x_3^2$ 化为标准型：</p>
+<p>6�12−2�22+2�326y12−2y22+2y32</p>
+<p>其中，$y_1 &#x3D; \mathbf{u</p>
+<h5 id="单叶双曲面"><a href="#单叶双曲面" class="headerlink" title="单叶双曲面"></a>单叶双曲面</h5><p>单叶双曲面是三维空间中的一种曲面，它的数学定义为一个旋转双曲线围绕其中心轴旋转所形成的曲面。单叶双曲面可以用以下的方程表示：</p>
+<p>$\frac{x^2}{a^2} + \frac{y^2}{b^2} - \frac{z^2}{c^2} &#x3D; 1$</p>
+<p>其中 $a,b,c$ 是正实数，且满足 $a^2 + b^2 &lt; c^2$。这个方程也可以写成以下形式：</p>
+<p>$\frac{(x - x_0)^2}{a^2} + \frac{(y - y_0)^2}{b^2} - \frac{(z - z_0)^2}{c^2} &#x3D; 1$</p>
+<p>其中 $(x_0, y_0, z_0)$ 是单叶双曲面的中心点。这个方程表示的是以 $(x_0, y_0, z_0)$ 为中心，$x$ 轴方向上的轴长为 $2a$，$y$ 轴方向上的轴长为 $2b$，$z$ 轴方向上的轴长为 $2c$ 的单叶双曲面。</p>
+<p>单叶双曲面有一个特点，就是它的两个极限曲面都是双曲面。一个极限曲面是以 $z$ 轴为轴心的双曲面，另一个极限曲面是以 $x$ 轴或 $y$ 轴为轴心的双曲面。</p>
+<p>Regenerate response</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2023/04/07/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" data-id="clg5w6b9g000j10m9hg48eehx" data-title="" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2023/04/07/%E4%BB%A5%E4%B8%8B%E6%98%AF%E4%B8%80%E4%BA%9B%E7%A8%8B%E5%BA%8F%E5%91%98%E5%8F%AF%E4%BB%A5%E7%94%A8%E6%9D%A5%E7%BB%83%E6%89%8B%E7%9A%84%E7%A8%8B%E5%BA%8F%E9%A1%B9%E7%9B%AE%EF%BC%9A/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/04/07/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/04/">April 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/04/07/%E4%B8%AD%E5%9B%BD%E8%BF%91%E4%BB%A3%E5%8F%B2/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/04/07/%E5%85%83%E7%B4%A0%E5%90%8C%E5%85%B8/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/04/07/%E7%94%A8chatgpt%E9%87%8D%E5%86%99%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6%E4%B9%A6/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/04/07/%E4%BB%A5%E4%B8%8B%E6%98%AF%E4%B8%80%E4%BA%9B%E7%A8%8B%E5%BA%8F%E5%91%98%E5%8F%AF%E4%BB%A5%E7%94%A8%E6%9D%A5%E7%BB%83%E6%89%8B%E7%9A%84%E7%A8%8B%E5%BA%8F%E9%A1%B9%E7%9B%AE%EF%BC%9A/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2023/04/07/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

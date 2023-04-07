@@ -4,17 +4,17 @@
   <meta charset="utf-8">
   
   
-  <title>Hello World | Hexo</title>
+  <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+  <meta name="description" content="神经网络反向传播 假设女人对男的打分遵循$y&#x3D;x1+x2+6$这样的规律，x1表示钱，x2表示外貌，6表示安慰分，但是我们不知道。所以要建立 神经网络 $y&#x3D;Theta*[X,1]$ 第一个男的钱1，外貌1，女生打分8， 初始化$Theta&#x3D;[[0,0,0]]$，所以误差是8 我们要根据8来计算Theta更新幅度，咋算呢 就是要算梯度，$\partial y(Thet">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://example.com/2023/04/07/hello-world/index.html">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2023/04/07/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="神经网络反向传播 假设女人对男的打分遵循$y&#x3D;x1+x2+6$这样的规律，x1表示钱，x2表示外貌，6表示安慰分，但是我们不知道。所以要建立 神经网络 $y&#x3D;Theta*[X,1]$ 第一个男的钱1，外貌1，女生打分8， 初始化$Theta&#x3D;[[0,0,0]]$，所以误差是8 我们要根据8来计算Theta更新幅度，咋算呢 就是要算梯度，$\partial y(Thet">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2023-04-07T01:08:45.331Z">
-<meta property="article:modified_time" content="2023-04-07T01:08:45.331Z">
+<meta property="article:published_time" content="2023-04-07T01:50:18.556Z">
+<meta property="article:modified_time" content="2023-03-31T17:23:45.541Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -73,46 +73,50 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-神经网络反向传播" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2023/04/07/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2023-04-07T01:08:45.331Z" itemprop="datePublished">2023-04-07</time>
+    <a href="/2023/04/07/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD/" class="article-date">
+  <time class="dt-published" datetime="2023-04-07T01:50:18.556Z" itemprop="datePublished">2023-04-07</time>
 </a>
     
   </div>
   <div class="article-inner">
     
     
-      <header class="article-header">
-        
-  
-    <h1 class="p-name article-title" itemprop="headline name">
-      Hello World
-    </h1>
-  
-
-      </header>
-    
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+        <p>神经网络反向传播</p>
+<p>假设女人对男的打分遵循$y&#x3D;x1+x2+6$这样的规律，x1表示钱，x2表示外貌，6表示安慰分，但是我们不知道。所以要建立</p>
+<p>神经网络</p>
+<p>$y&#x3D;Theta*[X,1]$</p>
+<p>第一个男的钱1，外貌1，女生打分8，</p>
+<p>初始化$Theta&#x3D;[[0,0,0]]$，所以误差是8</p>
+<p>我们要根据8来计算Theta更新幅度，咋算呢</p>
+<p>就是要算梯度，$\partial y(Theta)&#x3D;[[1,1,6]]$</p>
+<p>所以梯度更新就按这个来，8的误差</p>
+<p>假设这个神经网络有一层呢</p>
+<p>[x1,x2,1]-Theta		[n1,n2]-Phi		[y]<br>$$<br>Y&#x3D;X\Theta \Phi<br>$$<br>初始化Theta&#x3D;[[1,1],[1,1],[1,1]], Phi&#x3D;[[1],[1]]</p>
+<p>[1,1,1]-	[3,3]-	6</p>
+<p>Y的误差为2，<br>$$<br>\partial Y&#x2F;\partial \Phi&#x3D;[3,3]<br>$$<br>要是你会咋样修改，$\Phi&#x3D;[[1.3],[1.3]]$</p>
+<p>继续看看<br>$$<br>\partial n1&#x2F;\partial \Theta&#x3D;[1,1,1]<br>$$</p>
+<p>$$<br>\partial N&#x2F;\partial \Theta&#x3D;[[1,1,1],[1,1,1]]<br>$$</p>
+<p>$$<br>\partial Y&#x2F;\partial N&#x3D;[[1],[1]]<br>$$</p>
+<p>$$<br>\partial Y&#x2F;\partial \Theta&#x3D;[[1],[1]]*[[1,1,1],[1,1,1]]&#x3D;[2,2,2]<br>$$</p>
+<p>$\Theta&#x3D;[[1.6,1.6,1.6]]$</p>
+<p>$$<br>\Delta \Phi&#x3D;\partial Y&#x2F;\partial \Phi&#x3D;N<br>$$</p>
+<p>$$<br>\Delta \Theta&#x3D;\partial Y&#x2F;\partial \Theta&#x3D;\partial Y&#x2F;\partial N*\partial N&#x2F;\partial \Theta<br>&#x3D;\Phi X<br>$$<br>加入有激活函数呢</p>
+<p>重新写下题目，一个女生觉得男生是否合格在于分数有没有10分以上，合格为1，不合格为0，遵循上题的打分规则</p>
+<p>[x1,x2,1]-	sigmod	y</p>
+<p>y&#x3D;sigmod(X*Theta)</p>
+<p>初始化Theta为[[1],[1],[1]]</p>
+<p>[1,1,1]-	[3]	sigmod(3)&#x3D;0.9</p>
+<p>误差就是0.9</p>
+<p>反向传播，<br>$$<br>\partial Y&#x2F;\partial \Theta&#x3D;sigmod导(Theta) X<br>$$</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2023/04/07/hello-world/" data-id="clg5un69300007gm9edmdafnd" data-title="Hello World" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2023/04/07/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD/" data-id="clg5w6b9e000f10m9dcu7bfv9" data-title="" class="article-share-link">Share</a>
       
       
       
@@ -122,15 +126,20 @@
     
 <nav id="article-nav">
   
-    <a href="/2023/04/07/test/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2023/04/07/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          我好饿啊
+          (no title)
         
       </div>
     </a>
   
+  
+    <a href="/2023/04/07/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
   
 </nav>
 
